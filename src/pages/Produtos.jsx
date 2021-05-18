@@ -21,18 +21,18 @@ const Produtos = () => {
     setLoading(true)
     api.get(`/produtos?perPage=8&page=${newPage}`).then(results => {
       console.log(results.data);
-      setProdutos([...produtos, ...results.data.data]);
+      setProdutos([...produtos, ...results.data]);
       setLoading(false)
     })
   }
 
   return (
-    <Pagina titulo="Produtos">
+    <Pagina>
 
       <Row>
           { produtos.map(item=>(
             <Col key={item.id} md={3} className="mb-3">
-              <Cartao />
+              <Cartao produto={item} />
             </Col>
           )) }
       </Row>
