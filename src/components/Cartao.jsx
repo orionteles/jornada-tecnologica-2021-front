@@ -14,7 +14,7 @@ const Cartao = ({produto}) => {
           <Card.Text>
             {produto.nome}
           </Card.Text>
-          <Card.Title>R$ {produto.valor}</Card.Title>
+          <Card.Title>R$ {produto.preco}</Card.Title>
         </Card.Body>
       </Card>
     </>

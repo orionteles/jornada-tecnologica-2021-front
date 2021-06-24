@@ -17,12 +17,12 @@ const Produtos = () => {
 
   async function fetchMore(){
     let newPage = page + 1
+    console.log(newPage);
     setPage(newPage)
     setLoading(true)
     api.get(`/produtos?perPage=8&page=${newPage}`).then(results => {
-      console.log(results.data);
-      setProdutos([...produtos, ...results.data]);
       setLoading(false)
+      setProdutos([...produtos, ...results.data]);
     })
   }
 
